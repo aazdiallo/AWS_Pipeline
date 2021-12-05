@@ -11,27 +11,27 @@ pipeline {
         }
         stage ("terraform init") {
             steps {
-                sh  'terraform init'
+                sh 'terraform init'
             }
         }
         stage ("terraform fmt") {
             steps {
-                sh  'terraform fmt'
+                sh 'terraform fmt'
             }
         }
         stage ("terraform validate") {
             steps {
-                sh  'terraform validate'
+                sh 'terraform validate'
             }
         }
         stage ("terraform plan") {
             steps {
-                sh  'terraform plan'
+                sh 'terraform plan'
             }
         }
         stage ("terraform apply") {
             steps {
-                sh  'terraform apply --auto-approve'
+                sh 'terraform apply --auto-approve'
             }
         }
     }
