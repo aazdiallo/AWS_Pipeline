@@ -1,8 +1,8 @@
 pipeline {
     agent any
-    tools {
-        terraform 'Terraform'
-    } 
+//     tools {
+//         terraform 'Terraform'
+//     } 
     stages {
         stage ("Checking out from Git") {
             steps {
