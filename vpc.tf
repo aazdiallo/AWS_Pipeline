@@ -1,7 +1,7 @@
 # Create VPC
 # terraform aws create vpc
 resource "aws_vpc" "vpc_training" {
-  cidr_block              = "${var.vpc-cidr}"
+  cidr_block              = var.vpc-cidr
   instance_tenancy        = "default"
   enable_dns_hostnames    = true
 
@@ -24,9 +24,9 @@ resource "aws_internet_gateway" "internet-gateway" {
 # terraform aws create subnet
 resource "aws_subnet" "public-subnet" {
   vpc_id                  = aws_vpc.vpc_training.id
-  cidr_block              = "${var.public-subnet-cidr}"
+  cidr_block              = var.public-subnet-cidr
   availability_zone       = "us-east-1a"
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
 
   tags      = {
     Name    = "Public Subnet"
@@ -59,7 +59,7 @@ resource "aws_route_table_association" "public-subnet-route-table-association" {
 # terraform aws create subnet
 resource "aws_subnet" "private-subnet" {
   vpc_id                   = aws_vpc.vpc_training.id
-  cidr_block               = "${var.private-subnet-cidr}"
+  cidr_block               = "var.private-subnet-cidr
   availability_zone        = "us-east-1a"
   map_public_ip_on_launch  = false
 
