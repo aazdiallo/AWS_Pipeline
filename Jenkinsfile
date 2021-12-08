@@ -7,7 +7,7 @@ pipeline {
         stage ("Checking out from Git") {
             steps {
 //                 git branch: 'main', url: 'https://github.com/aazdiallo/AWS_Pipeline'
-                git branch: 'main', credentialsId: '42c441ce-ab1e-47fa-9026-0a3da66faec4', url: 'https://github.com/aazdiallo/AWS_Pipeline'
+                git branch: 'main', credentialsId: '14894096-f5fe-4aff-9409-7aba517bb15b', url: 'https://github.com/aazdiallo/AWS_Pipeline'
             }
         }
         stage ("terraform init") {
